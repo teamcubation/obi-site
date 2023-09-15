@@ -1,10 +1,521 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>OBI</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=640, initial-scale=0.15">
+  <title>Teamcubation's OBI: Technical Onboarding You’re Gonna Love</title>
+  <link href="https://fonts.googleapis.com/css?family=Manrope:400,700,600|Just+Another+Hand:400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="globals.css"/>
+  <link rel="stylesheet" href="styleguide.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script type="text/javascript">
+    function adjustSizes() {
+      console.log(window.innerWidth)
+      const body = document.getElementsByTagName('body')[0];
+      const obiFly = document.getElementsByClassName('group-3')[0]
+      if (window.innerWidth < 1920) {
+        body.style.marginLeft = ((window.innerWidth - 1935) / 2).toString() + 'px';
+      } else {
+        body.style.marginLeft = 0;
+      }
+
+      if (window.innerWidth <= 1920) {
+        obiFly.className = obiFly.className.replace(' group-3-rightful', '');
+      } else {
+        obiFly.className += ' group-3-rightful';
+      }
+    }
+    window.addEventListener('load', adjustSizes);
+    window.addEventListener('resize', adjustSizes);
+  </script>
 </head>
 <body>
-    Coming soon...
+<div class="saas-v">
+  <div class="div">
+    <div class="overlap-4">
+      <header class="header">
+        <div class="overlap-5">
+          <div class="btn-text-wrapper">
+            <div class="btn-text-6">Try it free</div>
+          </div>
+          <p class="we-offer-you-a-brand">
+            We offer you a brand-new way to onboard technical people to your team. Plan, manage, measure
+            &amp; track
+            all your onboarding activities in a simple and easy way.
+          </p>
+          <div class="overlap-group-3">
+            <p class="title-2">Technical Onboarding <br/>You’re Gonna Love</p>
+            <p class="title-3">People ready in a flash</p>
+            <p class="considering-the">
+              <span class="text-wrapper-16">Considering the significance of </span>
+              <span class="text-wrapper-17">employee experience in attracting and retaining top talent</span>
+              <span class="text-wrapper-16">, we have developed a </span>
+              <span class="text-wrapper-17">solution for the technical onboarding process of new hires</span>
+              <span class="text-wrapper-16">. The primary goals revolve around </span>
+              <span class="text-wrapper-17"
+              >standardizing processes, gaining visibility, automating tasks, and ensuring success
+                  </span>
+              <span class="text-wrapper-16">in facilitating the productive integration of new hires.</span>
+            </p>
+            <img class="group-3" src="img/group-2168.png"/>
+          </div>
+        </div>
+      </header>
+      <img class="image" src="img/image-9.png"/>
+      <div class="navbar">
+        <div class="btns">
+          <button class="btn-4">
+            <a class="btn-text-7"><img class="img-3" src="img/icon-l-1.svg"/> Sign in</a>
+          </button>
+          <button class="btn-5">
+            <a class="btn-text-8"><img class="img-3" src="img/icon-l.svg"/> Try it free</a>
+          </button>
+        </div>
+        <div class="navbar-2">
+          <div class="text-wrapper-18">Features</div>
+          <div class="text-wrapper-18">Benefits</div>
+          <div class="text-wrapper-18">For your area</div>
+          <div class="text-wrapper-18">Prices</div>
+        </div>
+      </div>
+    </div>
+    <div class="CTA">
+      <p class="text-wrapper-4">No subscriptions. No annual fees. No lock-ins.</p>
+      <div class="input-group">
+        <div class="input-l">
+          <div class="text-4">Name</div>
+          <div class="group-2">
+            <div class="ellipse"></div>
+            <div class="rectangle"></div>
+          </div>
+        </div>
+      </div>
+      <div class="input-l-wrapper">
+        <div class="input-l">
+          <div class="text-5">Company</div>
+          <div class="card"></div>
+        </div>
+      </div>
+      <div class="div-wrapper">
+        <div class="input-l">
+          <div class="text-6">Email</div>
+          <img class="email" src="img/email.svg"/>
+        </div>
+      </div>
+      <button class="button">
+        <div class="btn-text-2">Join the waiting list</div>
+      </button>
+      <p class="text-wrapper-5">Seamless onboard software developers guided by data</p>
+      <p class="text-wrapper-6">We are opening new clients constantly. Don’t worry we will contact you
+        shortly!</p>
+      <p class="title">Get 5 free credits - Join the waiting list</p>
+      <div class="overlap">
+        <div class="panel">
+          <p class="text-7">Project management tools you use ?</p>
+          <div class="arrow"><img class="img" src="img/chevron-2.svg"/></div>
+        </div>
+        <img class="calendar-time" src="img/calendar-time.svg"/>
+      </div>
+      <div class="overlap-2">
+        <div class="panel-2">
+          <p class="text-8">Communication tools you use ?</p>
+          <div class="chevron-wrapper"><img class="img" src="img/chevron-1.svg"/></div>
+        </div>
+        <div class="message-duotone"></div>
+      </div>
+      <div class="overlap-3">
+        <div class="panel-3">
+          <p class="text-8">Version control system&nbsp;&nbsp;you use ?</p>
+          <div class="chevron-wrapper"><img class="img" src="img/chevron.svg"/></div>
+        </div>
+        <div class="shuffle"></div>
+      </div>
+    </div>
+    <div class="pricing">
+      <div class="card-2">
+        <button class="btn-2">
+          <button class="btn-text-3">Contact Us</button>
+        </button>
+        <div class="list">
+          <div class="line">
+            <p class="text-wrapper-7">Special price per new hire by volume</p>
+            <img class="img" src="img/icons-bx-check.svg"/>
+          </div>
+        </div>
+        <div class="price">
+          <div class="text-9">Corporate packs</div>
+        </div>
+        <div class="icon"><img class="img-2" src="img/icons-bx-happy-beaming.svg"/></div>
+      </div>
+      <div class="card-3">
+        <div class="btn-shadow">
+          <div class="btn-text-4">Try it free</div>
+        </div>
+        <div class="price-2">
+          <p class="text-9">Mid Pack - 15 credits</p>
+          <div class="price-3">
+            <div class="text-wrapper-8">$135</div>
+            <div class="text-wrapper-9">00</div>
+          </div>
+          <div class="text-wrapper-10">per new hire</div>
+        </div>
+        <div class="icons-bx-happy-wrapper"><img class="img-2" src="img/icons-bx-happy.svg"/></div>
+      </div>
+      <div class="card-4">
+        <button class="btn-3">
+          <div class="btn-text-5">Try it free</div>
+        </button>
+        <div class="price-4">
+          <p class="text-9">Small pack - 5 credits</p>
+          <div class="price-3">
+            <div class="text-wrapper-8">$ 150</div>
+            <div class="text-wrapper-9">00</div>
+          </div>
+          <div class="text-wrapper-10">per new hire</div>
+        </div>
+        <div class="icon"><img class="img-2" src="img/icons-bx-wink-smile.svg"/></div>
+      </div>
+      <p class="text-wrapper-11">Buy credits and use them on time</p>
+    </div>
+    <div class="cases">
+      <p class="text-wrapper-12">
+        Elevating Multiple Areas: OBI Delivers value to People, Technology and Company Success
+      </p>
+    </div>
+    <div class="benefits">
+      <div class="line-2">
+        <div class="icon-box">
+          <img class="icon-2" src="img/icon-2.svg"/>
+          <div class="text-10">
+            <div class="text-wrapper-13">Real-time Deviation Alerts</div>
+            <p class="text-wrapper-14">
+              Stay ahead of onboarding challenges with instant alerts, ensuring swift corrective actions
+              and a
+              seamless integration process
+            </p>
+          </div>
+        </div>
+        <div class="icon-box">
+          <div class="icon-3"><img class="puzzle" src="img/puzzle.svg"/></div>
+          <div class="text-10">
+            <div class="text-wrapper-13">Super Easy Integration</div>
+            <p class="text-wrapper-14">
+              Effortless Integration: Seamlessly Incorporate Data from Your Familiar Work Tools
+            </p>
+          </div>
+        </div>
+        <div class="icon-box">
+          <img class="icon-2" src="img/icon-1.svg"/>
+          <div class="text-10">
+            <div class="text-wrapper-13">Knowledge Base</div>
+            <p class="text-wrapper-14">
+              Unlock the Power of Informed Decisions: Build a Resource Repository Tailored to Project and
+              Department
+              Needs
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="line-3">
+        <div class="icon-box">
+          <div class="calendar-wrapper"><img class="calendar" src="img/calendar.svg"/></div>
+          <div class="text-10">
+            <div class="text-wrapper-13">Customized Task Plans</div>
+            <p class="text-wrapper-14">Simplify onboarding with custom task plans for each project or
+              department</p>
+          </div>
+        </div>
+        <div class="icon-box">
+          <div class="icon-3">
+            <div class="overlap-group-2">
+              <img class="users" src="img/users.png"/> <img class="add-group" src="img/add-group.svg"/>
+            </div>
+          </div>
+          <div class="text-10">
+            <div class="text-wrapper-13">Strategic Trio Assignment</div>
+            <p class="text-wrapper-14">
+              Boost onboarding success with teamwork: Pair new hires with Buddies and Leaders for smooth
+              integration
+              and faster growth
+            </p>
+          </div>
+        </div>
+        <div class="icon-box">
+          <img class="icon-2" src="img/icon.svg"/>
+          <div class="text-10">
+            <div class="text-wrapper-13">Monitor Progress</div>
+            <p class="text-wrapper-14">
+              Comprehensive Progress Tracking and Visibility Across the triad: the new hire, the buddy and
+              the
+              leader
+            </p>
+          </div>
+        </div>
+        <div class="icon-box">
+          <div class="icon-3"><img class="document-report" src="img/document-report.svg"/></div>
+          <div class="text-10">
+            <div class="text-wrapper-13">Metrics-driven Insights</div>
+            <p class="text-wrapper-14">
+              Comprehensive Metrics: Analyze New Hire&#39;s Technical, Business, and Team Progress, Along
+              with Buddy
+              and Leader Task Execution
+            </p>
+          </div>
+        </div>
+      </div>
+      <p class="text-wrapper-15">Experience unprecedented organization and visibility</p>
+    </div>
+    <div class="overlap-6">
+      <div class="group-4">
+        <div class="content">
+          <div class="text-11">
+            <button class="btn-6">
+              <div class="btn-text-9">Try it free</div>
+              <img class="img" src="img/icon-r.svg"/>
+            </button>
+            <div class="list-2">
+              <div class="line-4">
+                <img class="img" src="img/icons-bx-check-circle.svg"/>
+                <div class="text-wrapper-19">Fricctionless tech onboarding</div>
+              </div>
+              <div class="line-4">
+                <img class="img" src="img/icons-bx-check-circle.svg"/>
+                <div class="text-wrapper-19">Normalize onboarding worflows</div>
+              </div>
+              <div class="line-4">
+                <img class="img" src="img/icons-bx-check-circle.svg"/>
+                <div class="text-wrapper-19">Real time visibility</div>
+              </div>
+              <div class="line-4">
+                <img class="img" src="img/icons-bx-check-circle.svg"/>
+                <p class="text-wrapper-19">Using your usual work tools</p>
+              </div>
+            </div>
+            <p class="integrate-people">Integrate people into <br/>your production process with confidence
+            </p>
+          </div>
+        </div>
+        <div class="overlap-7">
+          <div class="rectangle-2"></div>
+          <img class="image-2" src="img/image-13-2.png"/>
+        </div>
+      </div>
+      <div class="rectangle-3"></div>
+    </div>
+    <div class="tools">
+      <p class="lorem-ipsum-dolor-si">
+        Our metrics and analysis system gathers a lot of data from the tools you commonly use in the company,
+        and we
+        also get insights from observations made by Buddies and Leaders
+      </p>
+      <p class="title-4">All of this using your daily tools</p>
+      <div class="slack-color-wrapper"><img class="slack-color" src="img/slack-color.svg"/></div>
+      <div class="git-hub-wrapper"><img class="git-hub" src="img/github.svg"/></div>
+      <div class="g-calendar-wrapper"><img class="g-calendar" src="img/g-calendar.png"/></div>
+      <div class="linear-wrapper"><img class="linear" src="img/linear.svg"/></div>
+      <div class="jira-wrapper"><img class="jira" src="img/jira.png"/></div>
+      <div class="git-lab-wrapper"><img class="git-lab" src="img/gitlab.svg"/></div>
+    </div>
+    <div class="text-wrapper-20">And others!</div>
+    <div class="frame">
+      <div class="frame-2">
+        <div class="frame-wrapper">
+          <div class="group-wrapper">
+            <div class="group-5">
+              <div class="overlap-wrapper">
+                <div class="overlap-8">
+                  <div class="technology">
+                    <div class="text-12">
+                      <div class="text-wrapper-21">People</div>
+                      <p class="text-wrapper-22">
+                        Choosing OBI for your People team offers numerous advantages. It
+                        streamlines onboarding,
+                        boosting engagement and satisfaction. With tailored plans, real-time
+                        tracking, and resource
+                        integration, OBI ensures personalized support for new hires, leading to
+                        higher retention and
+                        faster productivity. Align new talent with your culture and optimize the
+                        onboarding journey
+                        with OBI.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="group-6">
+                    <div class="image-wrapper"><img class="image-3" src="img/image-8.png"/></div>
+                    <div class="rectangle-4"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="technology-wrapper">
+                <div class="technology-2">
+                  <div class="text-13">
+                    <div class="text-wrapper-21">Company</div>
+                    <p class="text-wrapper-23">
+                      Expanding OBI throughout your company comes with numerous benefits. It
+                      simplifies onboarding,
+                      ensuring quick integration and productivity for new team members. OBI&#39;s
+                      customized plans,
+                      live tracking, and data insights boost operational efficiency and inform
+                      strategic decisions.
+                      With OBI, you can cut onboarding costs, boost employee retention, and build
+                      a unified,
+                      empowered workforce that fuels long-term growth and success
+                    </p>
+                  </div>
+                  <div class="group-7"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tabs">
+          <div class="tab">
+            <img class="img-3" src="img/star-4.svg"/>
+            <div class="text-wrapper-24">Company</div>
+          </div>
+          <div class="tab-2">
+            <img class="img-3" src="img/icons-bx-briefcase-alt-2-4.svg"/>
+            <div class="text-wrapper-2">People</div>
+          </div>
+          <div class="tab-2">
+            <img class="img-3" src="img/icons-bx-rocket-5.svg"/>
+            <div class="text-wrapper-2">Technology</div>
+          </div>
+        </div>
+      </div>
+      <div class="frame-3">
+        <div class="frame-4">
+          <div class="frame-5">
+            <div class="group-9">
+              <div class="group-10">
+                <div class="technology-2">
+                  <div class="text-14">
+                    <div class="text-wrapper-21">People</div>
+                    <p class="text-wrapper-22">
+                      Choosing OBI for your People team offers numerous advantages. It streamlines
+                      onboarding,
+                      boosting engagement and satisfaction. With tailored plans, real-time
+                      tracking, and resource
+                      integration, OBI ensures personalized support for new hires, leading to
+                      higher retention and
+                      faster productivity. Align new talent with your culture and optimize the
+                      onboarding journey
+                      with OBI.
+                    </p>
+                  </div>
+                  <div class="overlap-9">
+                    <div class="div-2">
+                      <div class="div-2">
+                        <div class="div-2">
+                          <div class="group-11"></div>
+                        </div>
+                        <div class="rectangle-8"></div>
+                        <div class="rectangle-9"></div>
+                        <div class="rectangle-10"></div>
+                      </div>
+                      <img class="salwyn" src="img/image-13.png"/>
+                      <img class="salwyn-2" src="img/image-13.png"/>
+                      <img class="salwyn-3" src="img/image-13.png"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tabs">
+          <div class="tab-2">
+            <img class="img-3" src="img/star-alt.svg"/>
+            <div class="text-wrapper-2">Company</div>
+          </div>
+          <div class="tab">
+            <img class="img-3" src="img/icons-bx-briefcase-alt-2-4.svg"/>
+            <div class="text-wrapper-24">People</div>
+          </div>
+          <div class="tab-2">
+            <img class="img-3" src="img/icons-bx-rocket-5.svg"/>
+            <div class="text-wrapper-2">Technology</div>
+          </div>
+        </div>
+      </div>
+      <div class="frame-6">
+        <div class="tabs">
+          <div class="tab-2">
+            <img class="img-3" src="img/star-alt.svg"/>
+            <div class="text-wrapper-2">Company</div>
+          </div>
+          <div class="tab-2">
+            <img class="img-3" src="img/icons-bx-briefcase-alt-2-4.svg"/>
+            <div class="text-wrapper-2">People</div>
+          </div>
+          <div class="tab">
+            <img class="img-3" src="img/icons-bx-rocket-5.svg"/>
+            <div class="text-wrapper-24">Technology</div>
+          </div>
+        </div>
+        <div class="frame-7">
+          <div class="group-12">
+            <div class="group-9">
+              <div class="technology-3">
+                <div class="text-15">
+                  <div class="text-wrapper-21">Technology Team</div>
+                  <p class="text-wrapper-23">
+                    Integrating OBI into your Technology department yields a host of benefits. It
+                    streamlines
+                    technical onboarding, enhancing new hires&#39; assimilation into projects and
+                    processes.
+                    OBI&#39;s customized training plans, progress tracking, and resource access
+                    enable precise skill
+                    development and swift integration. This results in faster project contributions,
+                    reduced
+                    learning curves, and overall improved team efficiency
+                  </p>
+                </div>
+                <div class="overlap-10">
+                  <div class="group-13"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <p class="text">2023 &copy; All rights reserved. Teamcubation</p>
+      <div class="contact">
+        <div class="text-wrapper">Contact Us</div>
+        <div class="text-2">example@gmail.com</div>
+      </div>
+      <div class="menu">
+        <div class="text-wrapper-2">Facebook</div>
+        <div class="text-3">Linkedin</div>
+        <div class="text-3">Twitter</div>
+        <div class="text-3">Instragram</div>
+      </div>
+      <div class="menu-2">
+        <div class="text-wrapper-2">Terms &amp; Conditions</div>
+        <div class="text-3">Privacy Policy</div>
+      </div>
+      <div class="menu-3">
+        <div class="text-wrapper-2">Home</div>
+        <div class="text-3">Features</div>
+        <div class="text-3">Benefits</div>
+        <div class="text-3">For your area</div>
+      </div>
+      <p class="p">
+        <a href="https://www.teamcubation.com" target="_blank" rel="noopener noreferrer"
+        ><span class="span">Teamcubation</span></a
+        >
+        <span class="text-wrapper-3">
+              is a cutting-edge company that empowers organizations with innovative solutions for talent development and
+              team optimization. By harnessing data-driven insights, personalized training, and collaboration tools,
+              Teamcubation drives performance, accelerates growth, and fosters a culture of continuous learning and
+              achievement</span
+        >
+      </p>
+      <div class="group"></div>
+    </footer>
+  </div>
+</div>
 </body>
 </html>
