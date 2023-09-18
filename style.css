@@ -1,3 +1,16 @@
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #4b1971;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .saas-v {
   background-color: #ffffff;
   display: flex;
@@ -70,7 +83,6 @@
   font-size: 16px;
   letter-spacing: 0;
   line-height: 25.6px;
-  text-decoration: underline;
   white-space: nowrap;
 }
 
@@ -690,6 +702,10 @@
   box-sizing: border-box;
 }
 
+.saas-v .btn-2:hover {
+  text-decoration: none;
+}
+
 .saas-v .btn-text-3 {
   position: relative;
   width: fit-content;
@@ -819,6 +835,10 @@
   letter-spacing: 0;
 }
 
+.saas-v .btn-text-4:hover {
+  text-decoration: none;
+}
+
 .saas-v .price-2 {
   display: flex;
   flex-direction: column;
@@ -920,6 +940,10 @@
   background: #fff;
   border-color: #6366f159;
   box-sizing: border-box;
+}
+
+.saas-v .btn-3:hover {
+  text-decoration: none;
 }
 
 .saas-v .btn-text-5 {
@@ -1178,6 +1202,7 @@
   background-color: #4b1971;
   border-radius: 6px;
   box-shadow: 0px 8px 18px -8px #6366f1e6;
+  z-index: 1;
 }
 
 .saas-v .btn-text-6 {
@@ -1205,6 +1230,7 @@
   font-size: 18px;
   letter-spacing: 0;
   line-height: 28.8px;
+  z-index: 1;
 }
 
 .saas-v .overlap-group-3 {
@@ -1340,9 +1366,13 @@
   font-weight: 600;
   text-align: center;
   letter-spacing: 0;
-  background: #fff;;
+  background: #fff;
   border-radius: 4px;
   padding: 10px 18px;
+}
+
+.saas-v .btn-text-7:hover {
+  text-decoration: none;
 }
 
 .saas-v .btn-5 {
@@ -1373,7 +1403,11 @@
   letter-spacing: 0;
   background: #4B1971;
   border-radius: 4px;
-  padding: 10px 18px;
+  padding: 10px 26px;
+}
+
+.saas-v .btn-text-8:hover {
+  text-decoration: none;
 }
 
 .saas-v .btn-text-7 img, .saas-v .btn-text-8 img {
