@@ -2353,3 +2353,31 @@
   left: 516px;
   background-color: #f6f6f6;
 }
+
+/** responsiveness **/
+
+@media only screen and (max-width: 1330px) {
+  body {
+    zoom: 80%;
+  }
+}
+@media only screen and (max-width: 1080px) {
+  body {
+    zoom: 70%;
+  }
+}
+@media only screen and (max-width: 930px) {
+  body {
+    zoom: 50%;
+  }
+}
+@media only screen and (max-width: 680px) {
+  body {
+    zoom: 30%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  body {
+    zoom: 25%;
+  }
+}

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=640, initial-scale=0.15">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Teamcubation's OBI: Technical Onboarding You’re Gonna Love</title>
   <link href="https://fonts.googleapis.com/css?family=Manrope:400,700,600|Just+Another+Hand:400&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.ico">
@@ -14,13 +14,37 @@
     function adjustSizes() {
       const body = $('body');
       const obiFly = $('.group-3')
+      let adjustFactor = 1;
+      let forceRightful = false;
+      if (window.innerWidth <= 1330) {
+        adjustFactor = 0.863;
+      }
+      if (window.innerWidth <= 1080) {
+        adjustFactor = 0.797;
+      }
+      if (window.innerWidth <= 930) {
+        adjustFactor = 0.58;
+      }
+      if (window.innerWidth <= 800) {
+        adjustFactor = 0.655;
+      }
+      if (window.innerWidth <= 680) {
+        adjustFactor = 0.3;
+        forceRightful = true;
+      }
+      if (window.innerWidth <= 500) {
+        adjustFactor = 0.42;
+      }
+      if (window.innerWidth <= 400) {
+        adjustFactor = 0.4;
+      }
       if (window.innerWidth < 1920) {
-        body.css('marginLeft', ((window.innerWidth - 1935) / 2).toString() + 'px')
+        body.css('marginLeft', ((window.innerWidth - 1935 * adjustFactor) / 2).toString() + 'px')
       } else {
         body.css('marginLeft', 0)
       }
 
-      if (window.innerWidth <= 1920) {
+      if (window.innerWidth <= 1920 && !forceRightful) {
         obiFly.removeClass('group-3-rightful');
       } else {
         obiFly.addClass('group-3-rightful');
