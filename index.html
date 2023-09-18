@@ -5,28 +5,43 @@
   <meta name="viewport" content="width=640, initial-scale=0.15">
   <title>Teamcubation's OBI: Technical Onboarding You’re Gonna Love</title>
   <link href="https://fonts.googleapis.com/css?family=Manrope:400,700,600|Just+Another+Hand:400&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico">
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="globals.css"/>
   <link rel="stylesheet" href="styleguide.css"/>
   <link rel="stylesheet" href="style.css"/>
   <script type="text/javascript">
     function adjustSizes() {
-      console.log(window.innerWidth)
-      const body = document.getElementsByTagName('body')[0];
-      const obiFly = document.getElementsByClassName('group-3')[0]
+      const body = $('body');
+      const obiFly = $('.group-3')
       if (window.innerWidth < 1920) {
-        body.style.marginLeft = ((window.innerWidth - 1935) / 2).toString() + 'px';
+        body.css('marginLeft', ((window.innerWidth - 1935) / 2).toString() + 'px')
       } else {
-        body.style.marginLeft = 0;
+        body.css('marginLeft', 0)
       }
 
       if (window.innerWidth <= 1920) {
-        obiFly.className = obiFly.className.replace(' group-3-rightful', '');
+        obiFly.removeClass('group-3-rightful');
       } else {
-        obiFly.className += ' group-3-rightful';
+        obiFly.addClass('group-3-rightful');
       }
     }
-    window.addEventListener('load', adjustSizes);
-    window.addEventListener('resize', adjustSizes);
+    $(document).ready(function() {
+      adjustSizes();
+      $('.tabs .tab, .tabs .tab-2').click(function(e) {
+        var scrollLeft = 0;
+        switch ($(e.currentTarget).attr('target')) {
+          case 'peop':
+            scrollLeft = 1296;
+            break;
+          case 'tech':
+            scrollLeft = 2592;
+            break;
+        }
+        $('#areas-carousel').scrollLeft(scrollLeft);
+      })
+    });
+    $(window).resize(adjustSizes);
   </script>
 </head>
 <body>
@@ -102,9 +117,9 @@
           <img class="email" src="img/email.svg"/>
         </div>
       </div>
-      <button class="button">
+      <div class="button">
         <div class="btn-text-2">Join the waiting list</div>
-      </button>
+      </div>
       <p class="text-wrapper-5">Seamless onboard software developers guided by data</p>
       <p class="text-wrapper-6">We are opening new clients constantly. Don’t worry we will contact you
         shortly!</p>
@@ -134,7 +149,7 @@
     <div class="pricing">
       <div class="card-2">
         <button class="btn-2">
-          <button class="btn-text-3">Contact Us</button>
+          <div class="btn-text-3">Contact Us</div>
         </button>
         <div class="list">
           <div class="line">
@@ -295,12 +310,8 @@
             </p>
           </div>
         </div>
-        <div class="overlap-7">
-          <div class="rectangle-2"></div>
-          <img class="image-2" src="img/image-13-2.png"/>
-        </div>
+        <div class="overlap-7"></div>
       </div>
-      <div class="rectangle-3"></div>
     </div>
     <div class="tools">
       <p class="lorem-ipsum-dolor-si">
@@ -317,7 +328,7 @@
       <div class="git-lab-wrapper"><img class="git-lab" src="img/gitlab.svg"/></div>
     </div>
     <div class="text-wrapper-20">And others!</div>
-    <div class="frame">
+    <div class="frame" id="areas-carousel">
       <div class="frame-2">
         <div class="frame-wrapper">
           <div class="group-wrapper">
@@ -369,15 +380,15 @@
           </div>
         </div>
         <div class="tabs">
-          <div class="tab">
+          <div class="tab" target="comp">
             <img class="img-3" src="img/star-4.svg"/>
             <div class="text-wrapper-24">Company</div>
           </div>
-          <div class="tab-2">
+          <div class="tab-2" target="peop">
             <img class="img-3" src="img/icons-bx-briefcase-alt-2-4.svg"/>
             <div class="text-wrapper-2">People</div>
           </div>
-          <div class="tab-2">
+          <div class="tab-2" target="tech">
             <img class="img-3" src="img/icons-bx-rocket-5.svg"/>
             <div class="text-wrapper-2">Technology</div>
           </div>
@@ -424,15 +435,15 @@
           </div>
         </div>
         <div class="tabs">
-          <div class="tab-2">
+          <div class="tab-2" target="comp">
             <img class="img-3" src="img/star-alt.svg"/>
             <div class="text-wrapper-2">Company</div>
           </div>
-          <div class="tab">
+          <div class="tab" target="peop">
             <img class="img-3" src="img/icons-bx-briefcase-alt-2-4.svg"/>
             <div class="text-wrapper-24">People</div>
           </div>
-          <div class="tab-2">
+          <div class="tab-2" target="tech">
             <img class="img-3" src="img/icons-bx-rocket-5.svg"/>
             <div class="text-wrapper-2">Technology</div>
           </div>
@@ -440,15 +451,15 @@
       </div>
       <div class="frame-6">
         <div class="tabs">
-          <div class="tab-2">
+          <div class="tab-2" target="comp">
             <img class="img-3" src="img/star-alt.svg"/>
             <div class="text-wrapper-2">Company</div>
           </div>
-          <div class="tab-2">
+          <div class="tab-2" target="peop">
             <img class="img-3" src="img/icons-bx-briefcase-alt-2-4.svg"/>
             <div class="text-wrapper-2">People</div>
           </div>
-          <div class="tab">
+          <div class="tab" target="tech">
             <img class="img-3" src="img/icons-bx-rocket-5.svg"/>
             <div class="text-wrapper-24">Technology</div>
           </div>
@@ -484,13 +495,13 @@
       <p class="text">2023 &copy; All rights reserved. Teamcubation</p>
       <div class="contact">
         <div class="text-wrapper">Contact Us</div>
-        <div class="text-2">example@gmail.com</div>
+        <div class="text-2">info@teamcubation.com</div>
       </div>
       <div class="menu">
         <div class="text-wrapper-2">Facebook</div>
         <div class="text-3">Linkedin</div>
         <div class="text-3">Twitter</div>
-        <div class="text-3">Instragram</div>
+        <div class="text-3">Instagram</div>
       </div>
       <div class="menu-2">
         <div class="text-wrapper-2">Terms &amp; Conditions</div>
