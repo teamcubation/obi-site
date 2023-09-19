@@ -6,7 +6,7 @@
   <title>Teamcubation's OBI: Technical Onboarding You’re Gonna Love</title>
   <link href="https://fonts.googleapis.com/css?family=Manrope:400,700,600|Just+Another+Hand:400&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.ico">
-  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="globals.css"/>
   <link rel="stylesheet" href="styleguide.css"/>
   <link rel="stylesheet" href="style.css"/>
@@ -72,10 +72,69 @@
       });
       setInterval(function () {
         const navbar = $('.overlap-4');
-        if (navbar.offset().top < 0) {
-          navbar.css('marginTop', (-navbar.offset().top).toString() + 'px');
+        if (navbar.position().top < 0) {
+          navbar.css('marginTop', (-navbar.position().top).toString() + 'px');
         }
       }, 500);
+      $(document).click(function (e) {
+        if ($('.chks').is(':visible') && $(e.target).closest('.lst-trigger').length === 0 && $(e.target).closest('.chks').length === 0) {
+          $('.chks').hide();
+        }
+      });
+      $('#send-form-btn').click(function () {
+        const form = $('#trial-form');
+        if (form[0].reportValidity()) {
+          if ($('[name=pm_tools]:checked').length === 0) {
+            alert('Please select at least one project management tool');
+            return;
+          }
+          if ($('[name=comm_tools]:checked').length === 0) {
+            alert('Please select at least one communication tool');
+            return;
+          }
+          if ($('[name=vcs_tools]:checked').length === 0) {
+            alert('Please select at least one version control system');
+            return;
+          }
+          let data = {
+            pm_tools: [],
+            comm_tools: [],
+            vcs_tools: []
+          }
+          $.each(form.serializeArray(), function (idx, el) {
+            if (el.name in data) {
+              data[el.name].push(el.value);
+            } else {
+              data[el.name] = el.value;
+            }
+          });
+          $('#send-from-btn-txt').text('Sending...');
+          $.ajax({
+            url: "https://api.prod.tq.teamcubation.com/obi-trial",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            dataType: "json",
+            success: (r) => {
+              $('#send-from-btn-txt').text('Sent! Thanks!');
+              $('[name=company], [name=name], [name=email]').val('');
+              $('[name=pm_tools], [name=comm_tools], [name=vcs_tools]').prop('checked', false).trigger('change');
+              window.setTimeout(() => {
+                $('#send-from-btn-txt').text('Join the waiting list');
+              }, 3000);
+            }
+          });
+        }
+      });
+      $.each(['pm', 'comm', 'vcs'], (idx, el) => {
+        $(`[name=${el}_tools]`).on('change', function (){
+          var vals = $.map($(`[name=${el}_tools]:checked`), (e) => e.value);
+          if (!$(`#${el}_tools_text`).data('placeholder')) {
+            $(`#${el}_tools_text`).data('placeholder', $(`#${el}_tools_text`).text());
+          }
+          $(`#${el}_tools_text`).text(vals.length > 0 ? vals.join(', ') : $(`#${el}_tools_text`).data('placeholder'));
+        });
+      });
     });
     $(window).resize(adjustSizes);
   </script>
@@ -133,54 +192,133 @@
     <div class="CTA">
       <a id="try-it"></a>
       <p class="text-wrapper-4">No subscriptions. No annual fees. No lock-ins.</p>
-      <div class="input-group">
-        <div class="input-l">
-          <div class="text-4">Name</div>
-          <div class="group-2">
-            <div class="ellipse"></div>
-            <div class="rectangle"></div>
+
+      <form id="trial-form">
+        <div class="input-l-wrapper">
+          <div class="input-l">
+            <input type="text" name="company" required placeholder="Company" class="text-5"></input>
+            <div class="card"></div>
           </div>
         </div>
-      </div>
-      <div class="input-l-wrapper">
-        <div class="input-l">
-          <div class="text-5">Company</div>
-          <div class="card"></div>
+        <div class="input-group">
+          <div class="input-l">
+            <input type="text" name="name" required placeholder="Name" class="text-4"></input>
+            <div class="group-2">
+              <div class="ellipse"></div>
+              <div class="rectangle"></div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="div-wrapper">
-        <div class="input-l">
-          <div class="text-6">Email</div>
-          <img class="email" src="img/email.svg"/>
+        <div class="div-wrapper">
+          <div class="input-l">
+            <input type="email" name="email" required placeholder="E-mail" class="text-6"></input>
+            <img class="email" src="img/email.svg"/>
+          </div>
         </div>
-      </div>
-      <div class="button">
-        <div class="btn-text-2">Join the waiting list</div>
-      </div>
+        <a class="overlap lst-trigger" id="pm-tools-btn" onclick="$('.chks.vcs, .chks.comm').hide(); $('.chks.pm').toggle();">
+          <div class="panel">
+            <p class="text-7" id="pm_tools_text">What project management tools do you use?</p>
+            <div class="arrow"><img class="img" src="img/chevron-2.svg"/></div>
+          </div>
+          <img class="calendar-time" src="img/calendar-time.svg"/>
+        </a>
+        <div class="chks pm">
+          <ul>
+            <li>
+              <input type="checkbox" name="pm_tools" id="chk-pm-1" value="Jira"/>
+              <label for="chk-pm-1">Jira</label>
+            </li>
+            <li>
+              <input type="checkbox" name="pm_tools" id="chk-pm-2" value="Linear"/>
+              <label for="chk-pm-2">Linear</label>
+            </li>
+            <li>
+              <input type="checkbox" name="pm_tools" id="chk-pm-3" value="Trello"/>
+              <label for="chk-pm-3">Trello</label>
+            </li>
+            <li>
+              <input type="checkbox" name="pm_tools" id="chk-pm-4" value="Asana"/>
+              <label for="chk-pm-4">Asana</label>
+            </li>
+            <li>
+              <input type="checkbox" name="pm_tools" id="chk-pm-5" value="Other(s)"/>
+              <label for="chk-pm-5">Other(s)</label>
+            </li>
+          </ul>
+          <a class="ok-button" onclick="$('.chks.pm').toggle();">OK</a>
+        </div>
+        <div class="overlap-2 lst-trigger" id="pm-tools-comm" onclick="$('.chks.vcs, .chks.pm').hide();  $('.chks.comm').toggle();">
+          <div class="panel-2">
+            <p class="text-8 less-ml" id="comm_tools_text">What communication tools do you use?</p>
+            <div class="chevron-wrapper"><img class="img" src="img/chevron-1.svg"/></div>
+          </div>
+          <div class="message-duotone"></div>
+        </div>
+        <div class="chks comm">
+          <ul>
+            <li>
+              <input type="checkbox" name="comm_tools" id="chk-comm-1" value="Slack"/>
+              <label for="chk-comm-1">Slack</label>
+            </li>
+            <li>
+              <input type="checkbox" name="comm_tools" id="chk-comm-2" value="Microsoft Teams"/>
+              <label for="chk-comm-2">Microsoft Teams</label>
+            </li>
+            <li>
+              <input type="checkbox" name="comm_tools" id="chk-comm-3" value="Discord"/>
+              <label for="chk-comm-3">Discord</label>
+            </li>
+            <li>
+              <input type="checkbox" name="comm_tools" id="chk-comm-4" value="Google Spaces"/>
+              <label for="chk-comm-4">Google Spaces</label>
+            </li>
+            <li>
+              <input type="checkbox" name="comm_tools" id="chk-comm-5" value="Other(s)"/>
+              <label for="chk-comm-5">Other(s)</label>
+            </li>
+          </ul>
+          <a class="ok-button" onclick="$('.chks.comm').toggle();">OK</a>
+        </div>
+        <div class="overlap-3 lst-trigger" id="vcs-tools-comm" onclick="$('.chks.pm, .chks.comm').hide(); $('.chks.vcs').toggle();">
+          <div class="panel-3">
+            <p class="text-8" id="vcs_tools_text">What version control systems do you use?</p>
+            <div class="chevron-wrapper"><img class="img" src="img/chevron.svg"/></div>
+          </div>
+          <div class="shuffle"></div>
+        </div>
+        <div class="chks vcs">
+          <ul>
+            <li>
+              <input type="checkbox" name="vcs_tools" id="chk-vcs-1" value="GitHub"/>
+              <label for="chk-vcs-1">GitHub</label>
+            </li>
+            <li>
+              <input type="checkbox" name="vcs_tools" id="chk-vcs-2" value="GitLab"/>
+              <label for="chk-vcs-2">GitLab</label>
+            </li>
+            <li>
+              <input type="checkbox" name="vcs_tools" id="chk-vcs-3" value="Azure Repos"/>
+              <label for="chk-vcs-3">Azure Repos</label>
+            </li>
+            <li>
+              <input type="checkbox" name="vcs_tools" id="chk-vcs-4" value="Bitbucket"/>
+              <label for="chk-vcs-4">Bitbucket</label>
+            </li>
+            <li>
+              <input type="checkbox" name="vcs_tools" id="chk-vcs-5" value="Other(s)"/>
+              <label for="chk-vcs-5">Other(s)</label>
+            </li>
+          </ul>
+          <a class="ok-button" onclick="$('.chks.vcs').toggle();">OK</a>
+        </div>
+        <a class="button" id="send-form-btn">
+          <div class="btn-text-2" id="send-from-btn-txt">Join the waiting list</div>
+        </a>
+      </form>
+
       <p class="text-wrapper-5">Seamless onboard software developers guided by data</p>
       <p class="text-wrapper-6">We are admitting new clients constantly. Don’t worry we will contact you shortly!</p>
       <p class="title">Get 5 free credits - Join the waiting list</p>
-      <div class="overlap">
-        <div class="panel">
-          <p class="text-7">Project management tools you use ?</p>
-          <div class="arrow"><img class="img" src="img/chevron-2.svg"/></div>
-        </div>
-        <img class="calendar-time" src="img/calendar-time.svg"/>
-      </div>
-      <div class="overlap-2">
-        <div class="panel-2">
-          <p class="text-8">Communication tools you use ?</p>
-          <div class="chevron-wrapper"><img class="img" src="img/chevron-1.svg"/></div>
-        </div>
-        <div class="message-duotone"></div>
-      </div>
-      <div class="overlap-3">
-        <div class="panel-3">
-          <p class="text-8">Version control system&nbsp;&nbsp;you use ?</p>
-          <div class="chevron-wrapper"><img class="img" src="img/chevron.svg"/></div>
-        </div>
-        <div class="shuffle"></div>
-      </div>
     </div>
     <div class="pricing">
       <a id="pricing"></a>

@@ -286,9 +286,9 @@ a:hover {
   left: 312px;
   background-color: var(--gray-900);
   border-radius: 8px;
-  overflow: hidden;
   border: 1px solid;
   border-color: var(--gray-300);
+  overflow: visible;
 }
 
 .saas-v .text-wrapper-4 {
@@ -432,6 +432,7 @@ a:hover {
 }
 
 .saas-v .button {
+  cursor: pointer;
   display: flex;
   width: 430px;
   align-items: center;
@@ -444,6 +445,10 @@ a:hover {
   background-color: var(--variable-collection-violeta-1);
   border-radius: 8px;
   box-sizing: border-box;
+}
+
+.saas-v .button:hover {
+  text-decoration: none;
 }
 
 .saas-v .btn-text-2 {
@@ -508,6 +513,7 @@ a:hover {
 }
 
 .saas-v .overlap {
+  cursor: pointer;
   position: absolute;
   width: 436px;
   height: 52px;
@@ -533,13 +539,14 @@ a:hover {
 
 .saas-v .text-7 {
   position: relative;
-  width: 308.5px;
-  margin-top: -4px;
+  width: 315px;
+  margin-top: -3px;
   margin-bottom: -2px;
+  margin-left: 5px;
   font-family: "Manrope", Helvetica;
   font-weight: 400;
   color: #707070;
-  font-size: 16px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 25.6px;
 }
@@ -552,7 +559,7 @@ a:hover {
   flex: 0 0 auto;
   margin-top: -8px;
   margin-bottom: -8px;
-  margin-right: -1.5px;
+  margin-right: -7.5px;
   background-color: var(--gray-100);
   border-radius: 40px;
 }
@@ -572,6 +579,7 @@ a:hover {
 }
 
 .saas-v .overlap-2 {
+  cursor: pointer;
   position: absolute;
   width: 436px;
   height: 52px;
@@ -598,14 +606,71 @@ a:hover {
 .saas-v .text-8 {
   position: relative;
   flex: 1;
-  margin-top: -4px;
+  margin-top: -3px;
   margin-bottom: -2px;
+  margin-left: 5px;
   font-family: "Manrope", Helvetica;
-  font-weight: 400;
+  font-weight: 500;
   color: #707070;
-  font-size: 16px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 25.6px;
+}
+
+.saas-v .text-8.less-ml {
+  margin-left: 0;
+}
+
+.chks{
+  background: #fff;
+  width: 200px;
+  height: 185px;
+  overflow: auto;
+  font-family: "Manrope", Helvetica;
+  font-size: 14px;
+  font-weight: 600;
+  position: absolute;
+  z-index: 2;
+  border: 2px solid #4b1971;
+  border-radius: 8px;
+  padding: 10px;
+  display: none;
+}
+
+.chks li {
+  margin: 8px 0;
+}
+
+.chks label {
+  cursor: pointer;
+}
+
+.chks.pm {
+  left: 250px;
+  top: 310px;
+}
+
+.chks.comm {
+  left: 700px;
+  top: 310px;
+}
+
+.chks.vcs {
+  left: 250px;
+  top: 380px;
+}
+
+.chks .ok-button {
+  cursor: pointer;
+  background: #4b1971;
+  color: #fff;
+  float: right;
+  padding: 5px 15px;
+  border-radius: 4px;
+  margin-top: -8px;
+}
+.chks .ok-button:hover {
+  text-decoration: none;
 }
 
 .saas-v .chevron-wrapper {
@@ -616,6 +681,7 @@ a:hover {
   flex: 0 0 auto;
   margin-top: -8px;
   margin-bottom: -8px;
+  margin-right: -7.5px;
   background-color: var(--gray-100);
   border-radius: 40px;
 }
@@ -631,6 +697,7 @@ a:hover {
 }
 
 .saas-v .overlap-3 {
+  cursor: pointer;
   position: absolute;
   width: 436px;
   height: 52px;
@@ -2386,6 +2453,12 @@ a:hover {
   top: 69px;
   left: 516px;
   background-color: #f6f6f6;
+}
+
+#trial-form input {
+  border: 0;
+  outline: none;
+  color: #000;
 }
 
 /** responsiveness **/
