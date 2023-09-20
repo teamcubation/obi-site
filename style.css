@@ -1332,7 +1332,7 @@ a:hover {
   white-space: nowrap;
   position: absolute;
   font-family: "Manrope", Helvetica;
-  letter-spacing: 0;
+  letter-spacing: 0.1px;
 }
 
 .saas-v .considering-the {
