@@ -1,56 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=400">
-  <title>Teamcubation's OBI: Technical Onboarding You’re Gonna Love</title>
-  <link href="https://fonts.googleapis.com/css?family=Manrope:400,500,600,700,800|Just+Another+Hand:400&display=swap" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=400">
+    <title>Teamcubation's OBI: Technical Onboarding You’re Gonna Love</title>
+    <link href="https://fonts.googleapis.com/css?family=Manrope:400,500,600,700,800|Just+Another+Hand:400&display=swap"
+          rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script type="text/javascript">
-        $(document).ready(function() {
-
-          setInterval(function () {
-            const navbar = $('.framer-1l9hvkc');
-            if (navbar.position().top < 0) {
-              navbar.css('marginTop', (-navbar.position().top).toString() + 'px');
-            }
-          }, 500);
-
-          $('#send-form-btn').click(function () {
-            const form = $('#trial-form');
-            if (form[0].reportValidity()) {
-              let data = {
-                pm_tools: [],
-                comm_tools: [],
-                vcs_tools: []
-              }
-              $.each(form.serializeArray(), function (idx, el) {
-                if (el.name in data) {
-                  data[el.name].push(el.value);
-                } else {
-                  data[el.name] = el.value;
+        $(document).ready(function () {
+            function adjustSizes() {
+                if (window.innerWidth > 600) {
+                    window.location.href = 'index.html';
                 }
-              });
-              $('#send-from-btn-txt').text('Sending...');
-              $.ajax({
-                url: "https://api.prod.tq.teamcubation.com/obi-trial",
-                type: "POST",
-                contentType: "application/json",
-                data: JSON.stringify(data),
-                dataType: "json",
-                success: (r) => {
-                  $('#send-from-btn-txt').text('Sent! Thanks!');
-                  $('[name=company], [name=name], [name=email]').val('');
-                  window.setTimeout(() => {
-                    $('#send-from-btn-txt').text('Join the waiting list');
-                  }, 3000);
-                }
-              });
             }
-          });
+            $(document).ready(function () {
+                adjustSizes();
+            });
+            $(window).resize(adjustSizes);
+            setInterval(function () {
+                const navbar = $('.framer-1l9hvkc');
+                if (navbar.position().top < 0) {
+                    navbar.css('marginTop', (-navbar.position().top).toString() + 'px');
+                }
+            }, 500);
+
+            $('#send-form-btn').click(function () {
+                const form = $('#trial-form');
+                if (form[0].reportValidity()) {
+                    let data = {
+                        pm_tools: [],
+                        comm_tools: [],
+                        vcs_tools: []
+                    }
+                    $.each(form.serializeArray(), function (idx, el) {
+                        if (el.name in data) {
+                            data[el.name].push(el.value);
+                        } else {
+                            data[el.name] = el.value;
+                        }
+                    });
+                    $('#send-from-btn-txt').text('Sending...');
+                    $.ajax({
+                        url: "https://api.prod.tq.teamcubation.com/obi-trial",
+                        type: "POST",
+                        contentType: "application/json",
+                        data: JSON.stringify(data),
+                        dataType: "json",
+                        success: (r) => {
+                            $('#send-from-btn-txt').text('Sent! Thanks!');
+                            $('[name=company], [name=name], [name=email]').val('');
+                            window.setTimeout(() => {
+                                $('#send-from-btn-txt').text('Join the waiting list');
+                            }, 3000);
+                        }
+                    });
+                }
+            });
         });
     </script>
-  <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico">
 
     <style data-framer-css-ssr-minified="" data-framer-components="framer-kk4Kr">html, body, #main {
         margin: 0;
@@ -1403,7 +1413,8 @@
         aspect-ratio: 2.136134351432955 / 1;
         bottom: var(--framer-aspect-ratio-supported, 0px);
         flex: none;
-        height: 311px;
+        height: 280px;
+        margin-top: 23px;
         left: 0;
         position: absolute;
         right: 0;
@@ -1958,7 +1969,7 @@
         }
     }
 
-    input{
+    input {
         font-size: 15px;
         font-weight: 500;
         font-family: Manrope;
@@ -2045,7 +2056,8 @@
                      data-framer-component-type="RichTextContainer"><p
                         style="--framer-font-size:40px;--framer-line-height:130%" class="framer-text"><span
                         style="--font-selector:R0Y7TWFucm9wZS04MDA=;--framer-font-family:&quot;Manrope&quot;;--framer-font-size:40px;--framer-font-weight:800;--framer-letter-spacing:0px;--framer-text-color:rgba(19, 16, 34, 1)"
-                        class="framer-text"><a id="features"></a>Experience unprecedented organization and visibility</span></p></div>
+                        class="framer-text"><a
+                        id="features"></a>Experience unprecedented organization and visibility</span></p></div>
                 <div class="framer-1tis6og" data-framer-name="line" name="line">
                     <div class="framer-uaheyn" data-framer-name="icon-box" name="icon-box">
                         <div class="framer-u1r190" data-framer-name="icon" name="icon">
@@ -2450,7 +2462,8 @@
                     <div class="framer-1tchj69" data-framer-name="Rectangle 570" name="Rectangle 570"></div>
                     <div class="framer-uvylym" data-framer-name="Content" name="Content">
                         <div class="framer-gvusdd" data-framer-name="text" name="text">
-                            <a class="framer-32o1c4" data-framer-name="btn" name="btn" style="cursor:pointer; text-decoration: none;" href="#try-it">
+                            <a class="framer-32o1c4" data-framer-name="btn" name="btn"
+                               style="cursor:pointer; text-decoration: none;" href="#try-it">
                                 <div class="framer-1w3qo2y" data-framer-name="btn_text"
                                      style="outline:none;display:flex;flex-direction:column;justify-content:flex-start;flex-shrink:0;transform:none"
                                      data-framer-component-type="RichTextContainer"><p
@@ -2700,7 +2713,7 @@
                          data-framer-name="Adding OBI to your Technology team brings lots of perks. It makes technical onboarding smoother, helping new hires fit into projects and processes. With OBI&#39;s tailored training, tracking, and resource access, your team can develop skills faster and integrate swiftly. This leads to quicker project contributions, shorter learning curves, and better overall efficiency. OBI is your go-to for boosting technology onboarding and empowering your team for success"
                          style="outline:none;display:flex;flex-direction:column;justify-content:flex-start;flex-shrink:0;transform:none"
                          data-framer-component-type="RichTextContainer"><p
-                            style="--framer-font-size:16px;--framer-line-height:110%" class="framer-text"><span
+                            style="--framer-font-size:16px;--framer-line-height:125%" class="framer-text"><span
                             style="--font-selector:R0Y7TWFucm9wZS1yZWd1bGFy;--framer-font-family:&quot;Manrope&quot;;--framer-font-size:16px;--framer-letter-spacing:0px;--framer-text-color:rgba(88, 92, 123, 1)"
                             class="framer-text">Adding OBI to your Technology team brings lots of perks. It makes technical onboarding smoother, helping new hires fit into projects and processes. With OBI's tailored training, tracking, and resource access, your team can develop skills faster and integrate swiftly. This leads to quicker project contributions, shorter learning curves, and better overall efficiency. OBI is your go-to for boosting technology onboarding and empowering your team for success</span>
                     </p></div>
@@ -2773,7 +2786,8 @@
                                      style="image-rendering:pixelated;flex-shrink:0;fill:rgba(0,0,0,1);color:rgba(0,0,0,1)"
                                      class="framer-a8jcbx">
                                     <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
                                              style="width: 100%; height: 100%" viewBox="0 0 18 18"
                                              preserveAspectRatio="none" width="100%" height="100%">
                                             <use href="#svg-174499202_372"></use>
@@ -2784,8 +2798,10 @@
                                      style="image-rendering:pixelated;flex-shrink:0;fill:rgba(0,0,0,1);color:rgba(0,0,0,1)"
                                      class="framer-nadieb">
                                     <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                             style="width: 100%; height: 100%" viewBox="0 0 6 5" preserveAspectRatio="none"
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             style="width: 100%; height: 100%" viewBox="0 0 6 5"
+                                             preserveAspectRatio="none"
                                              width="100%" height="100%">
                                             <use href="#svg-1838995119_223"></use>
                                         </svg>
@@ -2799,7 +2815,8 @@
                                      style="image-rendering:pixelated;flex-shrink:0;fill:rgba(0,0,0,1);color:rgba(0,0,0,1)"
                                      class="framer-1txiphn">
                                     <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
                                              style="width: 100%; height: 100%" viewBox="0 0 17 12"
                                              preserveAspectRatio="none" width="100%" height="100%">
                                             <use href="#svg1578398071_323"></use>
@@ -2810,8 +2827,10 @@
                                      style="image-rendering:pixelated;flex-shrink:0;fill:rgba(0,0,0,1);color:rgba(0,0,0,1)"
                                      class="framer-b5xj36">
                                     <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                             style="width: 100%; height: 100%" viewBox="0 0 5 6" preserveAspectRatio="none"
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             style="width: 100%; height: 100%" viewBox="0 0 5 6"
+                                             preserveAspectRatio="none"
                                              width="100%" height="100%">
                                             <use href="#svg1255551768_239"></use>
                                         </svg>
@@ -2821,8 +2840,10 @@
                                      style="image-rendering:pixelated;flex-shrink:0;fill:rgba(0,0,0,1);color:rgba(0,0,0,1)"
                                      class="framer-1gllsf2">
                                     <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                             style="width: 100%; height: 100%" viewBox="0 0 5 6" preserveAspectRatio="none"
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             style="width: 100%; height: 100%" viewBox="0 0 5 6"
+                                             preserveAspectRatio="none"
                                              width="100%" height="100%">
                                             <use href="#svg154694189_240"></use>
                                         </svg>
@@ -2832,7 +2853,8 @@
                                      style="image-rendering:pixelated;flex-shrink:0;fill:rgba(0,0,0,1);color:rgba(0,0,0,1)"
                                      class="framer-sje14r">
                                     <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
                                              style="width: 100%; height: 100%" viewBox="0 0 17 12"
                                              preserveAspectRatio="none" width="100%" height="100%">
                                             <use href="#svg-12424270_301"></use>
@@ -2846,16 +2868,18 @@
                                 <div class="framer-4w5aea" data-framer-name="#text"
                                      style="outline:none;display:flex;flex-direction:column;justify-content:flex-start;flex-shrink:0;transform:none"
                                      data-framer-component-type="RichTextContainer"><p
-                                        style="--framer-font-size:16px;--framer-line-height:160%" class="framer-text"><input type="text" name="company" placeholder="Company" required
-                                        style="--font-selector:R0Y7TWFucm9wZS1yZWd1bGFy;--framer-font-family:&quot;Manrope&quot;;--framer-font-size:16px;--framer-letter-spacing:0px;--framer-text-color:rgba(112, 112, 112, 1)"
-                                        class="framer-text"/></p></div>
+                                        style="--framer-font-size:16px;--framer-line-height:160%" class="framer-text">
+                                    <input type="text" name="company" placeholder="Company" required
+                                           style="--font-selector:R0Y7TWFucm9wZS1yZWd1bGFy;--framer-font-family:&quot;Manrope&quot;;--framer-font-size:16px;--framer-letter-spacing:0px;--framer-text-color:rgba(112, 112, 112, 1)"
+                                           class="framer-text"/></p></div>
                                 <div class="framer-zrece1" data-framer-name="Card" name="Card">
                                     <div class="framer-wqjnp6" data-framer-name="Card" name="Card">
                                         <div data-framer-component-type="SVG" data-framer-name="Rectangle 2195"
                                              name="Rectangle 2195"
                                              style="image-rendering:pixelated;flex-shrink:0;fill:rgba(0,0,0,1);color:rgba(0,0,0,1)"
                                              class="framer-ar4giz">
-                                            <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit">
+                                            <div class="svgContainer"
+                                                 style="width:100%;height:100%;aspect-ratio:inherit">
                                                 <img src="img/card.svg"/>
                                             </div>
                                         </div>
@@ -2883,7 +2907,8 @@
                             <div class="framer-1cd8pd5" data-framer-name="#text"
                                  style="outline:none;display:flex;flex-direction:column;justify-content:flex-start;flex-shrink:0;transform:none"
                                  data-framer-component-type="RichTextContainer"><p
-                                    style="--framer-font-size:16px;--framer-line-height:160%" class="framer-text"><input type="text" name="name" placeholder="Name" required
+                                    style="--framer-font-size:16px;--framer-line-height:160%" class="framer-text"><input
+                                    type="text" name="name" placeholder="Name" required
                                     style="--font-selector:R0Y7TWFucm9wZS1yZWd1bGFy;--framer-font-family:&quot;Manrope&quot;;--framer-font-size:16px;--framer-letter-spacing:0px;--framer-text-color:rgba(112, 112, 112, 1)"
                                     class="framer-text"/></p></div>
                             <div class="framer-3xgqpd" data-framer-name="Group 2163" name="Group 2163">
@@ -2895,26 +2920,28 @@
                         </div>
                     </div>
                     <div class="framer-8udrgk" data-framer-name="input-group" name="input-group">
-                    <div class="framer-142x3av" data-border="true" data-framer-name="input/L" name="input/L">
-                        <div class="framer-1lcqhq4" data-framer-name="#text"
-                             style="outline:none;display:flex;flex-direction:column;justify-content:flex-start;flex-shrink:0;transform:none"
-                             data-framer-component-type="RichTextContainer"><p
-                                style="--framer-font-size:16px;--framer-line-height:160%" class="framer-text"><input type="email" name="email" placeholder="E-mail" required
-                                style="--font-selector:R0Y7TWFucm9wZS1yZWd1bGFy;--framer-font-family:&quot;Manrope&quot;;--framer-font-size:16px;--framer-letter-spacing:0px;--framer-text-color:rgba(112, 112, 112, 1)"
-                                class="framer-text"/></p></div>
-                        <div class="framer-1t3bthp" data-framer-name="Email" name="Email">
-                            <div data-framer-component-type="SVG" data-framer-name="Vector 87" name="Vector 87"
-                                 style="image-rendering:pixelated;flex-shrink:0;fill:rgba(0,0,0,1);color:rgba(0,0,0,1)"
-                                 class="framer-1yc5kjk">
-                                <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit">
-                                    <img src="img/email.svg"/>
+                        <div class="framer-142x3av" data-border="true" data-framer-name="input/L" name="input/L">
+                            <div class="framer-1lcqhq4" data-framer-name="#text"
+                                 style="outline:none;display:flex;flex-direction:column;justify-content:flex-start;flex-shrink:0;transform:none"
+                                 data-framer-component-type="RichTextContainer"><p
+                                    style="--framer-font-size:16px;--framer-line-height:160%" class="framer-text"><input
+                                    type="email" name="email" placeholder="E-mail" required
+                                    style="--font-selector:R0Y7TWFucm9wZS1yZWd1bGFy;--framer-font-family:&quot;Manrope&quot;;--framer-font-size:16px;--framer-letter-spacing:0px;--framer-text-color:rgba(112, 112, 112, 1)"
+                                    class="framer-text"/></p></div>
+                            <div class="framer-1t3bthp" data-framer-name="Email" name="Email">
+                                <div data-framer-component-type="SVG" data-framer-name="Vector 87" name="Vector 87"
+                                     style="image-rendering:pixelated;flex-shrink:0;fill:rgba(0,0,0,1);color:rgba(0,0,0,1)"
+                                     class="framer-1yc5kjk">
+                                    <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit">
+                                        <img src="img/email.svg"/>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 </form>
-                <a id="send-form-btn" class="framer-dtpebk" data-framer-name="btn" name="btn" style="cursor: pointer; text-decoration: none;">
+                <a id="send-form-btn" class="framer-dtpebk" data-framer-name="btn" name="btn"
+                   style="cursor: pointer; text-decoration: none;">
                     <div class="framer-1e9kukf" data-framer-name="btn_text"
                          style="outline:none;display:flex;flex-direction:column;justify-content:flex-start;flex-shrink:0;transform:none;"
                          data-framer-component-type="RichTextContainer"><p
@@ -2942,7 +2969,8 @@
                                 loading="lazy"></div>
                     </div>
                 </div>
-                <a class="framer-140k7zz" data-framer-name="btn" name="btn" style="cursor: pointer; text-decoration: none;" href="#try-it">
+                <a class="framer-140k7zz" data-framer-name="btn" name="btn"
+                   style="cursor: pointer; text-decoration: none;" href="#try-it">
                     <div class="framer-ilan2g" data-framer-name="btn_text"
                          style="outline:none;display:flex;flex-direction:column;justify-content:flex-start;flex-shrink:0;transform:none;"
                          data-framer-component-type="RichTextContainer"><p
@@ -2982,20 +3010,20 @@
                 </div>
                 <div class="framer-15rko64" data-framer-name="menu" name="menu">
                     <a href="#features" class="framer-lqgx3g" data-framer-name="text"
-                         style="outline:none;display:flex;flex-direction:column;justify-content:flex-start;flex-shrink:0;transform:none; text-decoration: none"
-                         data-framer-component-type="RichTextContainer"><p
+                       style="outline:none;display:flex;flex-direction:column;justify-content:flex-start;flex-shrink:0;transform:none; text-decoration: none"
+                       data-framer-component-type="RichTextContainer"><p
                             style="--framer-font-size:24px;--framer-line-height:160%" class="framer-text"><span
                             style="--font-selector:R0Y7TWFucm9wZS02MDA=;--framer-font-family:&quot;Manrope&quot;;--framer-font-size:24px;--framer-font-weight:600;--framer-letter-spacing:0px;--framer-text-color:rgba(62, 65, 101, 1)"
                             class="framer-text">Features</span></p></a>
                     <a href="#integrations" class="framer-6x8whb" data-framer-name="text"
-                         style="outline:none;display:flex;flex-direction:column;justify-content:flex-start;flex-shrink:0;transform:none; text-decoration: none"
-                         data-framer-component-type="RichTextContainer"><p
+                       style="outline:none;display:flex;flex-direction:column;justify-content:flex-start;flex-shrink:0;transform:none; text-decoration: none"
+                       data-framer-component-type="RichTextContainer"><p
                             style="--framer-font-size:24px;--framer-line-height:160%" class="framer-text"><span
                             style="--font-selector:R0Y7TWFucm9wZS02MDA=;--framer-font-family:&quot;Manrope&quot;;--framer-font-size:24px;--framer-font-weight:600;--framer-letter-spacing:0px;--framer-text-color:rgba(62, 65, 101, 1)"
                             class="framer-text">Integrations</span></p></a>
                     <a href="#for-your-area" class="framer-4podfh" data-framer-name="text"
-                         style="outline:none;display:flex;flex-direction:column;justify-content:flex-start;flex-shrink:0;transform:none; text-decoration: none"
-                         data-framer-component-type="RichTextContainer"><p
+                       style="outline:none;display:flex;flex-direction:column;justify-content:flex-start;flex-shrink:0;transform:none; text-decoration: none"
+                       data-framer-component-type="RichTextContainer"><p
                             style="--framer-font-size:24px;--framer-line-height:160%" class="framer-text"><span
                             style="--font-selector:R0Y7TWFucm9wZS02MDA=;--framer-font-family:&quot;Manrope&quot;;--framer-font-size:24px;--framer-font-weight:600;--framer-letter-spacing:0px;--framer-text-color:rgba(62, 65, 101, 1)"
                             class="framer-text">For your area</span></p></a>
