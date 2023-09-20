@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="styleguide.css?v=3"/>
   <link rel="stylesheet" href="style.css?v=3"/>
   <script type="text/javascript">
+    if (window.innerWidth <= 600) {
+      window.location.href = 'mobile.html';
+    }
     function adjustSizes() {
       const body = $('body');
       const obiFly = $('.group-3')
