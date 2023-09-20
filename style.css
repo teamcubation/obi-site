@@ -1264,7 +1264,7 @@ a:hover {
   position: absolute;
   width: 210px;
   height: 52px;
-  top: 445px;
+  top: 530px;
   left: 312px;
   background-color: #4b1971;
   border-radius: 6px;
@@ -1289,12 +1289,12 @@ a:hover {
 .saas-v .we-offer-you-a-brand {
   position: absolute;
   width: 457px;
-  top: 335px;
+  top: 365px;
   left: 314px;
   font-family: "Manrope", Helvetica;
   font-weight: 400;
   color: var(--gray-700);
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 0;
   line-height: 28.8px;
   z-index: 1;
@@ -1314,8 +1314,8 @@ a:hover {
   left: 0;
   font-weight: 700;
   color: var(--gray-900);
-  font-size: 56px;
-  line-height: 63px;
+  font-size: 46px;
+  line-height: 55px;
   position: absolute;
   font-family: "Manrope", Helvetica;
   letter-spacing: 0;
@@ -1338,7 +1338,7 @@ a:hover {
 .saas-v .considering-the {
   position: absolute;
   width: 492px;
-  top: 527px;
+  top: 590px;
   left: 2px;
   font-family: "Manrope", Helvetica;
   font-weight: 400;
