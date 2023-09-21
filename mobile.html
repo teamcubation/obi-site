@@ -51,6 +51,7 @@
                         }
                     });
                     $('#send-from-btn-txt').text('Sending...');
+                    gtag('event', 'trial_form_submit', data);
                     $.ajax({
                         url: "https://api.prod.tq.teamcubation.com/obi-trial",
                         type: "POST",
