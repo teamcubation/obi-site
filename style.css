@@ -432,6 +432,7 @@ a:hover {
 }
 
 .saas-v .button {
+  border: none;
   cursor: pointer;
   display: flex;
   width: 430px;
@@ -527,7 +528,7 @@ a:hover {
   width: 436px;
   height: 52px;
   align-items: center;
-  gap: 25px;
+  gap: 21px;
   padding: 16px 24px 16px 44px;
   position: absolute;
   top: 0;
@@ -538,17 +539,19 @@ a:hover {
 }
 
 .saas-v .text-7 {
+  cursor: pointer;
   position: relative;
   width: 315px;
   margin-top: -3px;
   margin-bottom: -2px;
   margin-left: 5px;
   font-family: "Manrope", Helvetica;
-  font-weight: 400;
+  font-weight: 500;
   color: #707070;
   font-size: 15px;
   letter-spacing: 0;
   line-height: 25.6px;
+  padding: 0;
 }
 
 .saas-v .arrow {
@@ -604,6 +607,7 @@ a:hover {
 }
 
 .saas-v .text-8 {
+  cursor: pointer;
   position: relative;
   flex: 1;
   margin-top: -3px;

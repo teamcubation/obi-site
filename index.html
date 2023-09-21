@@ -96,20 +96,21 @@
           $('.chks').hide();
         }
       });
-      $('#send-form-btn').click(function () {
+      $('#send-form-btn').click(function (event) {
+        event.stopPropagation();
         const form = $('#trial-form');
         if (form[0].reportValidity()) {
           if ($('[name=pm_tools]:checked').length === 0) {
             alert('Please select at least one project management tool');
-            return;
+            return false;
           }
           if ($('[name=comm_tools]:checked').length === 0) {
             alert('Please select at least one communication tool');
-            return;
+            return false;
           }
           if ($('[name=vcs_tools]:checked').length === 0) {
             alert('Please select at least one version control system');
-            return;
+            return false;
           }
           let data = {
             pm_tools: [],
@@ -140,16 +141,29 @@
               }, 3000);
             }
           });
+          return false;
         }
       });
       $.each(['pm', 'comm', 'vcs'], (idx, el) => {
         $(`[name=${el}_tools]`).on('change', function (){
           var vals = $.map($(`[name=${el}_tools]:checked`), (e) => e.value);
           if (!$(`#${el}_tools_text`).data('placeholder')) {
-            $(`#${el}_tools_text`).data('placeholder', $(`#${el}_tools_text`).text());
+            $(`#${el}_tools_text`).data('placeholder', $(`#${el}_tools_text`).val());
           }
-          $(`#${el}_tools_text`).text(vals.length > 0 ? vals.join(', ') : $(`#${el}_tools_text`).data('placeholder'));
+          $(`#${el}_tools_text`).val(vals.length > 0 ? vals.join(', ') : $(`#${el}_tools_text`).data('placeholder'));
         });
+      });
+      $('#pm_tools_text').on('focus', function () {
+        $('.chks.vcs, .chks.comm').hide();
+        $('.chks.pm').show();
+      });
+      $('#comm_tools_text').on('focus', function () {
+        $('.chks.vcs, .chks.pm').hide();
+        $('.chks.comm').show();
+      });
+      $('#vcs_tools_text').on('focus', function () {
+        $('.chks.comm, .chks.pm').hide();
+        $('.chks.vcs').show();
       });
     });
     $(window).resize(adjustSizes);
@@ -208,13 +222,13 @@
       <form id="trial-form">
         <div class="input-l-wrapper">
           <div class="input-l">
-            <input type="text" name="company" required placeholder="Company" class="text-5"></input>
+            <input tabindex="1" type="text" name="company" required placeholder="Company" class="text-5"></input>
             <div class="card"></div>
           </div>
         </div>
         <div class="input-group">
           <div class="input-l">
-            <input type="text" name="name" required placeholder="Name" class="text-4"></input>
+            <input tabindex="2" type="text" name="name" required placeholder="Name" class="text-4"></input>
             <div class="group-2">
               <div class="ellipse"></div>
               <div class="rectangle"></div>
@@ -223,13 +237,13 @@
         </div>
         <div class="div-wrapper">
           <div class="input-l">
-            <input type="email" name="email" required placeholder="E-mail" class="text-6"></input>
+            <input tabindex="3" type="email" name="email" required placeholder="E-mail" class="text-6"></input>
             <img class="email" src="img/email.svg"/>
           </div>
         </div>
-        <a class="overlap lst-trigger" id="pm-tools-btn" onclick="$('.chks.vcs, .chks.comm').hide(); $('.chks.pm').toggle();">
+        <a class="overlap lst-trigger" id="pm-tools-btn">
           <div class="panel">
-            <p class="text-7" id="pm_tools_text">What project management tools do you use?</p>
+            <input tabindex="4" class="text-7" id="pm_tools_text" value="What project management tools do you use?" readonly/>
             <div class="arrow"><img class="img" src="img/chevron-2.svg"/></div>
           </div>
           <img class="calendar-time" src="img/calendar-time.svg"/>
@@ -259,9 +273,9 @@
           </ul>
           <a class="ok-button" onclick="$('.chks.pm').toggle();">OK</a>
         </div>
-        <div class="overlap-2 lst-trigger" id="pm-tools-comm" onclick="$('.chks.vcs, .chks.pm').hide();  $('.chks.comm').toggle();">
+        <div class="overlap-2 lst-trigger" id="pm-tools-comm">
           <div class="panel-2">
-            <p class="text-8 less-ml" id="comm_tools_text">What communication tools do you use?</p>
+            <input tabindex="5" class="text-8 less-ml" id="comm_tools_text" value="What communication tools do you use?" readonly/>
             <div class="chevron-wrapper"><img class="img" src="img/chevron-1.svg"/></div>
           </div>
           <div class="message-duotone"></div>
@@ -291,9 +305,9 @@
           </ul>
           <a class="ok-button" onclick="$('.chks.comm').toggle();">OK</a>
         </div>
-        <div class="overlap-3 lst-trigger" id="vcs-tools-comm" onclick="$('.chks.pm, .chks.comm').hide(); $('.chks.vcs').toggle();">
+        <div class="overlap-3 lst-trigger" id="vcs-tools-comm">
           <div class="panel-3">
-            <p class="text-8" id="vcs_tools_text">What version control systems do you use?</p>
+            <input tabindex="6" class="text-8" id="vcs_tools_text" value="What version control systems do you use?" readonly/>
             <div class="chevron-wrapper"><img class="img" src="img/chevron.svg"/></div>
           </div>
           <div class="shuffle"></div>
@@ -323,9 +337,9 @@
           </ul>
           <a class="ok-button" onclick="$('.chks.vcs').toggle();">OK</a>
         </div>
-        <a class="button" id="send-form-btn">
+        <button class="button" id="send-form-btn" tabindex="7">
           <div class="btn-text-2" id="send-from-btn-txt">Join the waiting list</div>
-        </a>
+        </button>
       </form>
 
       <p class="text-wrapper-5">Seamlessly onboard software developers guided by data</p>
