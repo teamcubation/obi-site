@@ -1077,7 +1077,7 @@ a:hover {
   font-size: var(--heading-h1-font-size);
   text-align: center;
   letter-spacing: var(--heading-h1-letter-spacing);
-  line-height: var(--heading-h1-line-height);
+  line-height: 55px;
   font-style: var(--heading-h1-font-style);
 }
 
@@ -1147,7 +1147,7 @@ a:hover {
   font-size: var(--body-s-font-size);
   text-align: center;
   letter-spacing: var(--body-s-letter-spacing);
-  line-height: var(--body-s-line-height);
+  line-height: 22px;
   font-style: var(--body-s-font-style);
 }
 
@@ -1235,7 +1235,7 @@ a:hover {
   font-size: var(--heading-h1-font-size);
   text-align: center;
   letter-spacing: var(--heading-h1-letter-spacing);
-  line-height: var(--heading-h1-line-height);
+  line-height: 50px;
   font-style: var(--heading-h1-font-style);
 }
 
@@ -1613,7 +1613,7 @@ a:hover {
   color: var(--gray-900);
   font-size: var(--heading-h2-font-size);
   letter-spacing: var(--heading-h2-letter-spacing);
-  line-height: var(--heading-h2-line-height);
+  line-height: 40px;
   font-style: var(--heading-h2-font-style);
 }
 
