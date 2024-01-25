@@ -166,7 +166,7 @@
               $('[name=company], [name=name], [name=email]').val('');
               $('[name=pm_tools], [name=comm_tools], [name=vcs_tools]').prop('checked', false).trigger('change');
               window.setTimeout(() => {
-                $('#send-from-btn-txt').text('Join the waiting list');
+                $('#send-from-btn-txt').text('Request Trial');
               }, 3000);
             }
           });
@@ -289,6 +289,10 @@
               <label for="chk-pm-2">Linear</label>
             </li>
             <li>
+              <input type="checkbox" name="pm_tools" id="chk-pm-6" value="Azure Boards"/>
+              <label for="chk-pm-6">Azure Boards</label>
+            </li>
+            <li>
               <input type="checkbox" name="pm_tools" id="chk-pm-3" value="Trello"/>
               <label for="chk-pm-3">Trello</label>
             </li>
@@ -368,13 +372,13 @@
           <a class="ok-button" onclick="$('.chks.vcs').toggle();">OK</a>
         </div>
         <button class="button" id="send-form-btn" tabindex="7">
-          <div class="btn-text-2" id="send-from-btn-txt">Join the waiting list</div>
+          <div class="btn-text-2" id="send-from-btn-txt">Request Trial</div>
         </button>
       </form>
 
       <p class="text-wrapper-5">Seamlessly onboard software developers guided by data</p>
       <p class="text-wrapper-6">We are admitting new clients constantly. Don’t worry we will contact you shortly!</p>
-      <p class="title">Get 3 free credits - Join the waiting list</p>
+      <p class="title">Get 3 free credits - Request Trial</p>
     </div>
     <!-- <div class="pricing">
       <a id="pricing"></a>

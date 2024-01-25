@@ -631,7 +631,8 @@ a:hover {
 .chks{
   background: #fff;
   width: 200px;
-  height: 185px;
+  min-height: 185px;
+  max-height: 210px;
   overflow: auto;
   font-family: "Manrope", Helvetica;
   font-size: 14px;
