@@ -23,7 +23,7 @@ a:hover {
   background-color: var(--white);
   width: 100%;
   /* height: 4800px; */
-  height: 4200px;
+  height: 4365px;
   position: relative;
   overflow: hidden;
 }
@@ -32,7 +32,7 @@ a:hover {
   position: absolute;
   width: 1920px;
   height: 497px;
-  top: 3760px;
+  top: 3902px;
   left: 0;
   background-color: var(--white);
 }
@@ -283,7 +283,7 @@ a:hover {
   position: absolute;
   width: 1296px;
   height: 506px;
-  top: 3250px;
+  top: 3396px;
   left: 312px;
   background-color: var(--gray-900);
   border-radius: 8px;
@@ -1064,7 +1064,7 @@ a:hover {
   position: absolute;
   width: 1078px;
   height: 104px;
-  top: 2577px;
+  top: 2653px;
   left: 420px;
 }
 
@@ -1087,7 +1087,7 @@ a:hover {
   position: absolute;
   width: 1290px;
   height: 580px;
-  top: 880px;
+  top: 933px;
   left: 316px;
 }
 
@@ -1515,7 +1515,7 @@ a:hover {
   position: absolute;
   width: 1292px;
   height: 457px;
-  top: 2080px;
+  top: 2130px;
   left: 314px;
   border-radius: 20px;
 }
@@ -1660,7 +1660,7 @@ a:hover {
   position: absolute;
   width: 959px;
   height: 311px;
-  top: 1533px;
+  top: 1573px;
   left: 482px;
 }
 
@@ -1868,8 +1868,8 @@ a:hover {
 .saas-v .text-wrapper-20 {
   position: absolute;
   width: 167px;
-  top: 1900px;
-  left: 1250px;
+  top: 1941px;
+  left: 1252px;
   transform: rotate(-18.69deg);
   font-family: "Just Another Hand", Helvetica;
   font-weight: 400;
@@ -1883,7 +1883,7 @@ a:hover {
   position: absolute;
   width: 1296px;
   height: 524px;
-  top: 2712px;
+  top: 2798px;
   left: 314px;
   overflow: hidden;
 }
