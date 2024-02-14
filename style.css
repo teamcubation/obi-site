@@ -23,7 +23,7 @@ a:hover {
   background-color: var(--white);
   width: 100%;
   /* height: 4800px; */
-  height: 4200px;
+  height: 4365px;
   position: relative;
   overflow: hidden;
 }
@@ -32,8 +32,7 @@ a:hover {
   position: absolute;
   width: 1920px;
   height: 497px;
-  /* top: 4336px; */
-  top: 3736px;
+  top: 3902px;
   left: 0;
   background-color: var(--white);
 }
@@ -284,8 +283,7 @@ a:hover {
   position: absolute;
   width: 1296px;
   height: 506px;
-  /* top: 3830px; */
-  top: 3230px;
+  top: 3396px;
   left: 312px;
   background-color: var(--gray-900);
   border-radius: 8px;
@@ -1066,7 +1064,7 @@ a:hover {
   position: absolute;
   width: 1078px;
   height: 104px;
-  top: 2487px;
+  top: 2653px;
   left: 420px;
 }
 
@@ -1517,7 +1515,7 @@ a:hover {
   position: absolute;
   width: 1292px;
   height: 457px;
-  top: 1964px;
+  top: 2130px;
   left: 314px;
   border-radius: 20px;
 }
@@ -1701,7 +1699,7 @@ a:hover {
   width: 141px;
   height: 141px;
   top: 170px;
-  left: 0;
+  left: 90px;
   background-color: #d5aeae21;
   border-radius: 10px;
   box-shadow: 5px 5px 20px #00000040;
@@ -1720,7 +1718,7 @@ a:hover {
   width: 141px;
   height: 141px;
   top: 170px;
-  left: 163px;
+  left: 253px;
   background-color: #d5aeae21;
   border-radius: 10px;
   box-shadow: 5px 5px 20px #00000040;
@@ -1739,7 +1737,7 @@ a:hover {
   width: 141px;
   height: 141px;
   top: 170px;
-  left: 326px;
+  left: 416px;
   background-color: #d5aeae21;
   border-radius: 10px;
   box-shadow: 5px 5px 20px #00000040;
@@ -1758,7 +1756,7 @@ a:hover {
   width: 141px;
   height: 141px;
   top: 170px;
-  left: 489px;
+  left: 579px;
   background-color: #d5aeae21;
   border-radius: 10px;
   box-shadow: 5px 5px 20px #00000040;
@@ -1777,7 +1775,7 @@ a:hover {
   width: 141px;
   height: 141px;
   top: 170px;
-  left: 651px;
+  left: 742px;
   background-color: #d5aeae21;
   border-radius: 10px;
   box-shadow: 5px 5px 20px #00000040;
@@ -1795,8 +1793,8 @@ a:hover {
   position: absolute;
   width: 141px;
   height: 141px;
-  top: 170px;
-  left: 814px;
+  top: 340px;
+  left: 90px;
   background-color: #d5aeae21;
   border-radius: 10px;
   box-shadow: 5px 5px 20px #00000040;
@@ -1810,11 +1808,68 @@ a:hover {
   left: 43px;
 }
 
+.saas-v .discord-wrapper {
+  position: absolute;
+  width: 141px;
+  height: 141px;
+  top: 340px;
+  left: 253px;
+  background-color: #d5aeae21;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px #00000040;
+}
+
+.saas-v .discord {
+  position: absolute;
+  width: 63px;
+  height: 60px;
+  top: 40px;
+  left: 43px;
+}
+
+.saas-v .azure-wrapper {
+  position: absolute;
+  width: 141px;
+  height: 141px;
+  top: 340px;
+  left: 416px;
+  background-color: #d5aeae21;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px #00000040;
+}
+
+.saas-v .azure {
+  position: absolute;
+  width: 63px;
+  height: 60px;
+  top: 40px;
+  left: 43px;
+}
+
+.saas-v .bitbucket-wrapper {
+  position: absolute;
+  width: 141px;
+  height: 141px;
+  top: 340px;
+  left: 579px;
+  background-color: #d5aeae21;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px #00000040;
+}
+
+.saas-v .bitbucket {
+  position: absolute;
+  width: 63px;
+  height: 60px;
+  top: 40px;
+  left: 43px;
+}
+
 .saas-v .text-wrapper-20 {
   position: absolute;
   width: 167px;
-  top: 1761px;
-  left: 1452px;
+  top: 1941px;
+  left: 1252px;
   transform: rotate(-18.69deg);
   font-family: "Just Another Hand", Helvetica;
   font-weight: 400;
@@ -1828,7 +1883,7 @@ a:hover {
   position: absolute;
   width: 1296px;
   height: 524px;
-  top: 2632px;
+  top: 2798px;
   left: 314px;
   overflow: hidden;
 }
